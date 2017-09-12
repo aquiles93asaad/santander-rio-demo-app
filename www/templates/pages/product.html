@@ -1,0 +1,18 @@
+<ion-view cache-view="false">
+    <ion-content class="auto-overflow-content">
+        <div class="image-container top-margin" ng-if="product.image">
+            <img class="centered-image" ng-src="img/products/{{product.image}}">
+        </div>
+        <div class="product-name">
+            {{product.name}}
+        </div>
+        <div class="product-description">
+            <p>{{product.description}}</p>
+        </div>
+        <div class="button-container">
+            <a ui-sref="app.actions({type: product.category, itemId: product.id})">
+                <button class="button button-block button-assertive">Pedir Ahora</button>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,157 @@
+<ion-view cache-view="false">
+    <ion-content class="auto-overflow-content">
+        <form ng-submit="setConfiguration()" class="custom-form">
+            <div class="list">
+                <div class="item-accordion" slide-accordion close-others="false">
+                    <div class="ac-header">
+                        General
+                        <div class="icon-container">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="ac-body">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Servidor</span>
+                            <input type="text" placeholder="Servidor" ng-model="config.general.httpURL">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Token</span>
+                            <input type="text" placeholder="Token" ng-model="config.general.token">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Licencia Micoblink</span>
+                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                            <div></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="item-accordion" slide-accordion close-others="false">
+                    <div class="ac-header">
+                        Clases Documentales
+                        <div class="icon-container">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="ac-body">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Documento Asociado</span>
+                            <input type="text" placeholder="Clase de Documentos" ng-model="config.documentClass">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Solicitud</span>
+                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Banco</span>
+                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Cheque</span>
+                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Cliente</span>
+                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Cuenta Cliente</span>
+                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Endoso</span>
+                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                            <div></div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="item-accordion" slide-accordion close-others="false">
+                    <div class="ac-header">
+                        Servicios
+                        <div class="icon-container">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="ac-body">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Creación de documento</span>
+                            <input type="text" placeholder="Servidor" ng-model="config.general.httpURL">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Recursos\Actualización</span>
+                            <input type="text" placeholder="Token" ng-model="config.general.token">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Búsqueda</span>
+                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Creación de documento con template</span>
+                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                            <div></div>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Firmar documento</span>
+                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                            <div></div>
+                        </label>
+                    </div>
+                </div>
+
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Ruta de imagen del template</span>
+                    <input type="text" placeholder="Ruta de imagen del template" ng-model="config.backgroundImage">
+                    <div></div>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Tamaño de imagen de firma</span>
+                    <input type="text" placeholder="Tamaño de imagen de firma" ng-model="config.signatureImageSize">
+                    <div></div>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Posición X de la firma</span>
+                    <input type="text" placeholder="Posición X de la firma" ng-model="config.signatureXPos">
+                    <div></div>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label">Posición Y de la firma</span>
+                    <input type="text" placeholder="Posición Y de la firma" ng-model="config.signatureYPos">
+                    <div></div>
+                </label>
+                <div class="button-container">
+                    <button type="submit" class="button button-block button-assertive">
+                        Guardar
+                    </button>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

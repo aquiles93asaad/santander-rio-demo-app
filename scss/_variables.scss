@@ -1,0 +1,57 @@
+/* Fonts Variables */
+
+/* Font Size */
+$font-size-small:           12px;
+$font-size-sm:              14px;
+$font-size-regular:         16px;
+$font-size-medium:          20px;
+$font-size-large:           24px;
+$font-size-x-large:         32px;
+$font-size-2x-large:        48px;
+$font-size-3x-large:       64px;
+$font-size-4x-large:      96px;
+
+/* Font Weight */
+$font-weight-light:         300;
+$font-weight-regular:       400;
+$font-weight-bold:          600;
+
+/* Font Family */
+$font-family-text: source-sans-pro, "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$font-family-display: source-serif-pro, "Georgia", "Times New Roman", "Times", serif;
+$font-family-code: source-code-pro, Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+/* \Fonts Variables\ */
+
+/* Color Variables */
+$light: #fff !default;
+$stable: #e8e8e8 !default;
+$stable-alternate: #848484 !default;
+$positive: #387ef5 !default;
+$calm: #11c1f3 !default;
+$balanced: #33cd5f !default;
+$energized: #ffc900 !default;
+$assertive: #ef473a !default;
+$assertive-alternate: #ee322a !default;
+$royal: #886aea !default;
+$dark: #000 !default;
+$button-bg-color: #f1322a;
+$button-pressed-bg-color: #d10009;
+/* \Color Variables\ */
+
+/*  Distance variables */
+// To be used for margins, paddings, position, height, width, top, bottom, left, right
+$no-distance: 0;
+$distance-2x-s: 5px;
+$distance-x-s: 10px;
+$distance-s: 15px;
+$distance-m: 20px;
+$distance-l: 25px;
+$distance-x-l: 30px;
+$distance-2x-l: 35px;
+$distance-3x-l: 40px;
+$distance-4x-l: 45px;
+$distance-5x-l: 50px;
+/*  \Distance variables\ */
+
+$menu-header-height: 160px;
+$input-line-height: 38px;

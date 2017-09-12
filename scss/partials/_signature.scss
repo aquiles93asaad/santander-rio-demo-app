@@ -1,0 +1,30 @@
+.m-signature-pad {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+
+    .m-signature-pad--body {
+        height: 70%;
+        margin: $distance-m;
+
+        canvas {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5) inset;
+        }
+    }
+
+    .m-signature-pad--footer {
+        .description {
+            color: #C3C3C3;
+            text-align: center;
+        }
+
+        .button-container {
+            float: left;
+            width: 50%;
+        }
+    }
+}

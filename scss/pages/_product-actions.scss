@@ -1,0 +1,55 @@
+.auto-overflow-content {
+    .fa {
+        &.fa-times {
+            position: absolute;
+            top: $distance-x-s;
+            right: $distance-s;
+            color: $button-bg-color;
+            font-size: $font-size-medium;
+            margin: $no-distance;
+            z-index: 100;
+        }
+    }
+}
+
+.image-container {
+    &.fixed-height {
+        height: 250px;
+    }
+}
+
+.data-container {
+    margin: $distance-s;
+
+    form {
+        border: 1px solid $stable;
+        box-shadow: inset 0px 0px 5px 1px $stable;
+        border-radius: $distance-2x-s;
+
+        .item {
+            border: none;
+            padding: $no-distance;
+            margin: $distance-2x-s $distance-x-s;
+
+            span {
+                padding: $no-distance;
+                font-size: $font-size-sm;
+                width: 100%;
+                max-width: none;
+            }
+
+            input {
+                background-color: transparent;
+                border-bottom: 1px solid $stable;
+                height: $distance-m;
+                font-size: $font-size-sm;
+            }
+
+            &:last-child {
+                input {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}

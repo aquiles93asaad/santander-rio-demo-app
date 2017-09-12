@@ -1,0 +1,46 @@
+.pdf-wrapper {
+    padding: $distance-x-s $distance-s;
+
+    .pdf-container {
+        overflow-x: auto;
+
+        .pdf-controls {
+            display: block;
+            position: fixed;
+            top: $distance-s;
+            z-index: 100;
+            width: calc(100% - 30px);
+
+            .button-container {
+                padding: $no-distance;
+                display: inline-block;
+                width: 32%;
+                text-align: center;
+
+                button {
+                    height: $distance-3x-l;
+                    width: 80%;
+                    min-height: 0;
+
+                    i {
+                        margin-right: $no-distance;
+                        font-size: $font-size-medium;
+
+                        &.fa-arrows {
+                            font-size: $font-size-sm;
+                            @include translate(-50%, -35%);
+                        }
+
+                        &.fa-file-o {
+                            font-size: $font-size-x-large;
+                        }
+                    }
+                }
+            }
+        }
+
+        canvas {
+            margin-top: $distance-5x-l;
+        }
+    }
+}

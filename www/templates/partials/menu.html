@@ -1,0 +1,52 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content drag-content="false">
+        <ion-nav-bar class="bar-assertive">
+            <ion-nav-back-button class="button-clear" ng-click="$ionicGoBack()">
+            </ion-nav-back-button>
+
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="toggleMenu()"></button>
+            </ion-nav-buttons>
+
+            <ion-nav-title>
+                <img ng-src="img/menu-logo.png">
+            </ion-nav-title>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent" class="menu-animated"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left" width="320">
+        <ion-content class="auto-overflow-content">
+            <ion-list>
+                <ion-item menu-item has-submenu class="has-submenu">
+                    <span class="relative-parent">Personas
+                        <div class="icon-container">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </span>
+                    <ion-list>
+                        <ion-item menu-item data-url="app.products" data-urlParams='{"type": "cards"}'><span>Tarjetas</span></ion-item>
+                        <ion-item menu-item data-url="app.products" data-urlParams='{"type": "accounts"}'><span>Cuentas</span></ion-item>
+                        <ion-item menu-item data-url="app.products" data-urlParams='{"type": "credits"}'><span>Créditos</span></ion-item>
+                    </ion-list>
+                </ion-item>
+
+                <ion-item menu-item has-submenu class="has-submenu">
+                    <span class="relative-parent">Cheques
+                        <div class="icon-container">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </span>
+                    <ion-list>
+                        <ion-item menu-item data-url="app.checks" data-urlParams='{"type": "emission"}'><span>Emisión</span></ion-item>
+                        <ion-item menu-item data-url="app.checks" data-urlParams='{"type": "deposit"}'><span>Despósito</span></ion-item>
+                    </ion-list>
+                </ion-item>
+
+                <ion-item menu-item data-url="app.config">
+                    <span>Configuración</span>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,14 @@
+{
+  "name": "signature_pad",
+  "homepage": "https://github.com/szimek/signature_pad",
+  "version": "2.2.1",
+  "_release": "2.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.2.1",
+    "commit": "65965704235cd431f1f823b811eca4e9aa83b16e"
+  },
+  "_source": "https://github.com/szimek/signature_pad.git",
+  "_target": "^2.2.0",
+  "_originalSource": "signature_pad"
+}

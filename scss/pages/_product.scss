@@ -1,0 +1,23 @@
+.product-name {
+    text-align: center;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    padding: $distance-s;
+}
+
+.product-description {
+    padding: $distance-s;
+    font-size: $font-size-regular;
+
+    p {
+        margin: $no-distance;
+    }
+}
+
+h3 {
+    &.plan-details-header {
+        font-weight: $font-weight-bold;
+        margin: 10px 0;
+        padding: $no-distance $distance-x-s;
+    }
+}

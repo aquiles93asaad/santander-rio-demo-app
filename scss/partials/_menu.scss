@@ -1,0 +1,97 @@
+.menu {
+    background-color: $dark;
+    top: 50px;
+    @include custom-transition(transform, 400ms);
+    @include translate3d(-320px, 0, 0);
+    z-index: 100 !important;
+    min-height: 1px;
+
+    .bar {
+        min-height: $menu-header-height;
+
+        img {
+            max-width: 75%;
+            display: block;
+            margin: 20px auto;
+        }
+    }
+
+    .scroll-content {
+        .item {
+            background-color: $dark;
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            color: $light;
+            padding: 0;
+            font-size: $font-size-regular;
+            border-top: none;
+            margin: $no-distance -1px;
+
+            span {
+                padding: $distance-m;
+                display: block;
+            }
+
+            .icon-container {
+                @extend .vertical-centered;
+                right: $distance-m;
+
+                .fa {
+                    @include custom-transition(transform, 400ms);
+                    @include rotate(0deg);
+                }
+            }
+
+            &.open {
+                .list {
+                    max-height: 500px;
+                }
+
+                & > span {
+                    border-bottom: 1px solid rgba(255,255,255,0.5);
+
+                    .fa {
+                        @include rotate(-180deg);
+                    }
+                }
+            }
+
+            &.chosen {
+                &:not(.open) {
+                    background-color: $light;
+                    border-left: $distance-x-s solid $assertive-alternate;
+                    color: $assertive-alternate;
+                    border-bottom: none;
+                    padding-left: $distance-x-s;
+                }
+            }
+
+            a {
+                border: none;
+                background-color: transparent;
+                padding: $no-distance;
+            }
+
+            .list {
+                max-height: $no-distance;
+                @include custom-transition(max-height, 400ms);
+                padding: $no-distance;
+
+                .item {
+                    span {
+                        padding-left: $distance-3x-l;
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    &.chosen {
+                        span {
+                            padding-left: $distance-m;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

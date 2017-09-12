@@ -1,0 +1,22 @@
+<ion-view cache-view="false">
+    <ion-content class="auto-overflow-content">
+        <div class="pdf-wrapper">
+            <ng-pdf class="pdf-container" template-url="templates/partials/pdf-viewer.html" debug="true" scale="page-fit"></ng-pdf>
+        </div>
+        <div class="button-container">
+            <button class="button button-block button-assertive" ng-click="openSignatureModal()" ng-disabled="showSingatureImage">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Firmar
+            </button>
+        </div>
+        <div class="image-container relative-parent fixed-height" ng-show="showSingatureImage">
+            <i class="fa fa-times" aria-hidden="true" ng-click="clearSignatureImage()"></i>
+            <img class="centered-image aboslute-centered" id="signature-image">
+        </div>
+
+        <div class="button-container">
+            <button class="button button-block button-assertive" ng-click="sendRequest()" ng-disabled="!showSingatureImage">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>Enviar Solicitud
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

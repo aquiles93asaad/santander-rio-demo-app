@@ -1,0 +1,10 @@
+<ion-view cache-view="false">
+    <ion-content class="auto-overflow-content">
+        <ion-list>
+            <ion-item ng-repeat="product in products" ui-sref="app.product({type: product.category, itemId: product.id})">
+                <!-- <img ng-src="img/products/{{product.image}}"> -->
+                <span>{{product.name}}</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

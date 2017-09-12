@@ -1,0 +1,11 @@
+.platform-ios {
+    .scroll-content {
+        &.auto-overflow-content {
+            overflow: hidden;
+
+            > .scroll {
+                height: 100%;
+            }
+        }
+    }
+}

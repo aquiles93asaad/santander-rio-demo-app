@@ -1,0 +1,33 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-assertive">
+        <h1 class="title">Registrarse</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeModal()"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="auto-overflow-content">
+        <form ng-submit="register()" class="custom-form register-form">
+            <div class="list">
+                <label class="item item-input">
+                    <input type="email" placeholder="Email" ng-model="registerForm.email">
+                    <div class="input-colored-line"></div>
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Usuario" ng-model="registerForm.username">
+                    <div class="input-colored-line"></div>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Contraseña" ng-model="registerForm.password">
+                    <div class="input-colored-line"></div>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Repetir Contraseña">
+                    <div class="input-colored-line"></div>
+                </label>
+                <label class="item">
+                    <button class="button button-block button-assertive" type="submit">Registrarse</button>
+                </label>
+            </div>
+        </form>
+    </ion-content>
+</ion-modal-view>

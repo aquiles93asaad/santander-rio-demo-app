@@ -1,0 +1,62 @@
+<ion-view cache-view="false">
+    <ion-content class="auto-overflow-content">
+        <div class="button-container">
+            <button class="button button-block button-assertive" ng-click="takePicture()" ng-disabled="showDniImage">
+                <i class="fa fa-camera" aria-hidden="true"></i>Foto DNI
+            </button>
+        </div>
+        <div class="image-container relative-parent fixed-height" ng-show="showDniImage">
+            <i class="fa fa-times" aria-hidden="true" ng-click="clearDniImage()"></i>
+            <img class="centered-image aboslute-centered" id="dni-image">
+        </div>
+        <div class="button-container">
+            <button class="button button-block button-assertive" ng-click="scanDni()" ng-disabled="showDataForm">
+                <i class="fa fa-id-card-o" aria-hidden="true"></i>Scan DNI
+            </button>
+        </div>
+        <div class="data-container relative-parent" ng-show="showDataForm">
+            <i class="fa fa-times" aria-hidden="true" ng-click="clearDataForm()"></i>
+            <form>
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Apellido</span>
+                        <input type="text" ng-model="form.dni.lastName" disabled>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Nombre</span>
+                        <input type="text" ng-model="form.dni.name" disabled>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Sexo</span>
+                        <input type="text" ng-model="form.dni.gender" disabled>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Fecha de nacimiento</span>
+                        <input type="text" ng-model="form.dni.birthDate" disabled>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">DNI</span>
+                        <input type="text" ng-model="form.dni.dniNumber" disabled>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Domicilio</span>
+                        <input type="text" placeholder="Ingresar domicilio" ng-model="form.address">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Email</span>
+                        <input type="email" placeholder="Ingresar email" ng-model="form.email">
+                    </label>
+                    <label class="item item-input item-stacked-label hide">
+                        <span class="input-label">Producto</span>
+                        <input type="hidden" ng-model="form.product">
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="button-container">
+            <button class="button button-block button-assertive" ng-click="sendData()">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i>Enviar Datos
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

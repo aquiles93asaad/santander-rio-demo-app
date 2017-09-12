@@ -1,0 +1,30 @@
+.tab-content {
+    &.pane {
+        overflow-y: auto;
+        padding-bottom: $distance-5x-l;
+    }
+
+    .item-complex {
+        height: 200px;
+        @extend .relative-parent;
+
+        .item-content {
+            @extend .vertical-centered;
+            text-align: center;
+            padding: $distance-s;
+            width: 100%;
+            max-height: 100%;
+
+            img {
+                max-width: 70%;
+                max-height: 70%;
+            }
+
+            span {
+                display: block;
+                font-size: $font-size-regular;
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+}

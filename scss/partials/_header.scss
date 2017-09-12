@@ -1,0 +1,38 @@
+.nav-bar-container {
+    .nav-bar-block {
+        .bar-header {
+            border-bottom-width: 0;
+
+            .button {
+                &:before {
+                    font-size: $font-size-x-large;
+                    font-weight: $font-weight-bold;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
+
+.modal,
+.menu-content {
+    .bar {
+        &.bar-assertive {
+            height: 50px;
+            line-height: 50px;
+            background-color: $assertive-alternate;
+
+            .title {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-size: $font-size-large;
+                left: 0 !important;
+
+                img {
+                    max-height: 100%;
+                }
+            }
+        }
+    }
+}
