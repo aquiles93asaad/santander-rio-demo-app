@@ -11,23 +11,23 @@
                     </div>
 
                     <div class="ac-body">
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Servidor</span>
-                            <input type="text" placeholder="Servidor" ng-model="config.general.httpURL">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Servidor</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Servidor" ng-model="config.general.httpURL">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Token</span>
-                            <input type="text" placeholder="Token" ng-model="config.general.token">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Token</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Token" ng-model="config.general.token">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Licencia Micoblink</span>
-                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Licencia Micoblink</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Licencia Micoblink" ng-model="config.general.microblinkLicense">
                             <div></div>
-                        </label>
+                        </div>
                     </div>
                 </div>
 
@@ -40,47 +40,47 @@
                     </div>
 
                     <div class="ac-body">
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Documento Asociado</span>
-                            <input type="text" placeholder="Clase de Documentos" ng-model="config.documentClass">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Documento Asociado</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Documento Asociado" ng-model="config.classes.documentClass">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Solicitud</span>
-                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Solicitud</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Solicitud" ng-model="config.classes.requestClass">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Banco</span>
-                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Banco</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Banco" ng-model="config.classes.bankClass">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Cheque</span>
-                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Cheque</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Cheque" ng-model="config.classes.checkClass">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Cliente</span>
-                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Cliente</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Cliente" ng-model="config.classes.clientClass">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Cuenta Cliente</span>
-                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Cuenta Cliente</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Cuenta Cliente" ng-model="config.classes.accountClientClass">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Endoso</span>
-                            <input type="text" placeholder="Clase de Solicitudes" ng-model="config.requestClass">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Endoso</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Endoso" ng-model="config.classes.endorsementClass">
                             <div></div>
-                        </label>
+                        </div>
                     </div>
                 </div>
 
@@ -93,59 +93,138 @@
                     </div>
 
                     <div class="ac-body">
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Creación de documento</span>
-                            <input type="text" placeholder="Servidor" ng-model="config.general.httpURL">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Creación de documento</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Creación de documento" ng-model="config.services.documentService">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Recursos\Actualización</span>
-                            <input type="text" placeholder="Token" ng-model="config.general.token">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Recursos\Actualización</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Recursos\Actualización" ng-model="config.services.resourceService">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Búsqueda</span>
-                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Búsqueda</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Búsqueda" ng-model="config.services.searchService">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Creación de documento con template</span>
-                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Creación de documento con template</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Creación de documento con template" ng-model="config.services.formService">
                             <div></div>
-                        </label>
+                        </div>
 
-                        <label class="item item-input item-floating-label">
-                            <span class="input-label">Firmar documento</span>
-                            <input type="text" placeholder="Token" ng-model="config.general.microblinkLicense">
+                        <div class="ac-body-item">
+                            <label class="ac-body-item-label">Firmar documento</label>
+                            <input type="text" class="ac-body-item-input" placeholder="Firmar documento" ng-model="config.services.signService">
                             <div></div>
-                        </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-accordion" slide-accordion close-others="false">
+                    <div class="ac-header">
+                        Templates
+                        <div class="icon-container">
+                            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                    </div>
+
+                    <div class="item-accordion" slide-accordion close-others="false">
+                        <div class="ac-header">
+                            Solicitud de tarjeta
+                            <div class="icon-container">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="ac-body">
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Ruta al imagen del Jasper</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Ruta al imagen del Jasper" ng-model="config.salesChannelSolution.backgroundImage">
+                                <div></div>
+                            </div>
+
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Tamaño de imagen de firma</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Tamaño de imagen de firma" ng-model="config.salesChannelSolution.signatureImageSize">
+                                <div></div>
+                            </div>
+
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Posición X de la firma</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Posición X de la firma" ng-model="config.salesChannelSolution.signatureYPossignatureXPos">
+                                <div></div>
+                            </div>
+
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Posición Y de la firma</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Posición Y de la firma" ng-model="config.salesChannelSolution.signatureYPos">
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item-accordion" slide-accordion close-others="false">
+                        <div class="ac-header">
+                            Cheques
+                            <div class="icon-container">
+                                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="ac-body">
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Ruta al imagen del Jasper</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Ruta al imagen del Jasper" ng-model="config.checksSolution.backgroundImage">
+                                <div></div>
+                            </div>
+
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Tamaño de imagen de firma</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Tamaño de imagen de firma" ng-model="config.checksSolution.signatureImageSize">
+                                <div></div>
+                            </div>
+
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Posición X de la firma</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Posición X de la firma" ng-model="config.checksSolution.signatureYPossignatureXPos">
+                                <div></div>
+                            </div>
+
+                            <div class="ac-body-item">
+                                <label class="ac-body-item-label">Posición Y de la firma</label>
+                                <input type="text" class="ac-body-item-input" placeholder="Posición Y de la firma" ng-model="config.checksSolution.signatureYPos">
+                                <div></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
 
-                <label class="item item-input item-floating-label">
-                    <span class="input-label">Ruta de imagen del template</span>
-                    <input type="text" placeholder="Ruta de imagen del template" ng-model="config.backgroundImage">
+                <!-- <div class="ac-body-item">
+                    <label class="ac-body-item-label">Ruta de imagen del template</label>
+                    <input type="text" class="ac-body-item-input" placeholder="Ruta de imagen del template" ng-model="config.backgroundImage">
                     <div></div>
-                </label>
-                <label class="item item-input item-floating-label">
-                    <span class="input-label">Tamaño de imagen de firma</span>
-                    <input type="text" placeholder="Tamaño de imagen de firma" ng-model="config.signatureImageSize">
+                </div>
+                <div class="ac-body-item">
+                    <label class="ac-body-item-label">Tamaño de imagen de firma</label>
+                    <input type="text" class="ac-body-item-input" placeholder="Tamaño de imagen de firma" ng-model="config.signatureImageSize">
                     <div></div>
-                </label>
-                <label class="item item-input item-floating-label">
-                    <span class="input-label">Posición X de la firma</span>
-                    <input type="text" placeholder="Posición X de la firma" ng-model="config.signatureXPos">
+                </div>
+                <div class="ac-body-item">
+                    <label class="ac-body-item-label">Posición X de la firma</label>
+                    <input type="text" class="ac-body-item-input" placeholder="Posición X de la firma" ng-model="config.signatureXPos">
                     <div></div>
-                </label>
-                <label class="item item-input item-floating-label">
-                    <span class="input-label">Posición Y de la firma</span>
-                    <input type="text" placeholder="Posición Y de la firma" ng-model="config.signatureYPos">
+                </div>
+                <div class="ac-body-item">
+                    <label class="ac-body-item-label">Posición Y de la firma</label>
+                    <input type="text" class="ac-body-item-input" placeholder="Posición Y de la firma" ng-model="config.signatureYPos">
                     <div></div>
-                </label>
+                </div> -->
                 <div class="button-container">
                     <button type="submit" class="button button-block button-assertive">
                         Guardar

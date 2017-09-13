@@ -1,7 +1,7 @@
 .menu {
     background-color: $dark;
     top: 50px;
-    @include custom-transition(transform, 400ms);
+    @include custom-transition(400ms, ease-in-out, transform);
     @include translate3d(-320px, 0, 0);
     z-index: 100 !important;
     min-height: 1px;
@@ -36,7 +36,7 @@
                 right: $distance-m;
 
                 .fa {
-                    @include custom-transition(transform, 400ms);
+                    @include custom-transition(400ms, ease-in-out, transform);
                     @include rotate(0deg);
                 }
             }
@@ -73,7 +73,7 @@
 
             .list {
                 max-height: $no-distance;
-                @include custom-transition(max-height, 400ms);
+                @include custom-transition(400ms, ease-in-out, max-height);
                 padding: $no-distance;
 
                 .item {

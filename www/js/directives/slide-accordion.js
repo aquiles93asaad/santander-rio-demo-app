@@ -16,9 +16,10 @@ function slideAccordion() {
     return directive;
 
     function link (scope, element, attrs) {
-        var header = element.find('.ac-header');
+        var header = element.first('.ac-header');
 
-        header.on('click', function() {
+        header.on('click', function(e) {
+            e.stopPropagation();
             if(attrs.closeOthers == "true") {
                 angular.element('.item-accordion.open').not(element).removeClass('open')
             }

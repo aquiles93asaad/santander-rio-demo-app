@@ -34,7 +34,7 @@ function ConfigurationController(
             }
 
         if(emptyValue === null) {
-            ThubanConfigService.set($rootScope.thubanConfig)
+            ThubanConfigService.set($scope.config)
             .then(function() {
                 $cordovaToast.showShortBottom('La configuración se guardó correctamente!');
             })

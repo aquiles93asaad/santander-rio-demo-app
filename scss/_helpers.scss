@@ -141,8 +141,8 @@ form.custom-form {
                     width: 0;
                     height: 0;
                     background-color: $button-bg-color;
-                    @include custom-transition(width, .4s);
-                    @include custom-transition(height, .4s);
+                    @include custom-transition(400ms, ease-in-out);
+                    @include custom-transition(400ms, ease-in-out);
                 }
 
                 &:focus {
@@ -159,5 +159,92 @@ form.custom-form {
 
     .button-container {
         padding: $distance-s $no-distance;
+    }
+}
+
+.item-accordion {
+    max-height: $distance-5x-l;
+    overflow: hidden;
+    margin-bottom: $distance-l;
+    box-shadow: 1px 1px 5px 0px grey;
+    border-radius: 4px;
+    @include custom-transition(600ms, ease-in-out, max-height);
+
+    .item-accordion {
+        margin-bottom: $distance-m;
+        box-shadow: none;
+        border-radius: none;
+    }
+
+    > .ac-header {
+        @extend .relative-parent;
+        padding: $distance-x-s;
+        font-size: $font-size-medium;
+        line-height: $distance-m;
+
+        .icon-container {
+            @extend .vertical-centered;
+            right: 20px;
+
+            i {
+                @include custom-transition(400ms, ease-in-out, transform);
+                @include rotate(0deg);
+            }
+        }
+    }
+
+    .ac-body {
+        width: 100%;
+        margin: $distance-x-s $no-distance;
+
+        .ac-body-item {
+            padding: $distance-x-s;
+
+            label,
+            input {
+                font-size: $font-size-rm;
+            }
+
+            input {
+                width: 100%;
+                border-bottom: 2px solid grey;
+
+                &:focus {
+                    border-bottom: none;
+
+                    + div {
+                        width: 100%;
+                        height: 2px;
+                    }
+                }
+            }
+
+            div {
+                width: 0;
+                height: 0;
+                background-color: $button-bg-color;
+                @include custom-transition(500ms, ease-in-out);
+            }
+        }
+    }
+
+    &.open {
+        max-height: 1000px;
+
+        > .ac-header {
+            .icon-container {
+                i {
+                    @include rotate(-180deg);
+                }
+            }
+        }
+
+        .ac-body {
+            .ac-body-item {
+                div {
+                    width: 100%;
+                }
+            }
+        }
     }
 }

@@ -2363,10 +2363,10 @@ body .menu-content .view-container.menu-animated {
   top: 50px;
   margin-bottom: 0; }
 
-.relative-parent, .tab-content .item-complex {
+.relative-parent, .item-accordion > .ac-header, .tab-content .item-complex {
   position: relative; }
 
-.vertical-centered, .menu .scroll-content .item .icon-container, .tab-content .item-complex .item-content {
+.vertical-centered, .item-accordion > .ac-header .icon-container, .menu .scroll-content .item .icon-container, .tab-content .item-complex .item-content {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -2415,7 +2415,7 @@ img.rotated {
   padding: 0 15px; }
   .image-container.top-margin {
     margin-top: 30px; }
-  .image-container.relative-parent, .tab-content .image-container.item-complex {
+  .image-container.relative-parent, .item-accordion > .image-container.ac-header, .tab-content .image-container.item-complex {
     margin: 0 15px;
     padding: 0; }
 
@@ -2460,16 +2460,16 @@ form.custom-form {
           width: 0;
           height: 0;
           background-color: #f1322a;
-          -webkit-transition: width 0.4s ease;
-          -moz-transition: width 0.4s ease;
-          -ms-transition: width 0.4s ease;
-          -o-transition: width 0.4s ease;
-          transition: width 0.4s ease;
-          -webkit-transition: height 0.4s ease;
-          -moz-transition: height 0.4s ease;
-          -ms-transition: height 0.4s ease;
-          -o-transition: height 0.4s ease;
-          transition: height 0.4s ease; }
+          -webkit-transition:  400ms ease-in-out;
+          -moz-transition:  400ms ease-in-out;
+          -ms-transition:  400ms ease-in-out;
+          -o-transition:  400ms ease-in-out;
+          transition:  400ms ease-in-out;
+          -webkit-transition:  400ms ease-in-out;
+          -moz-transition:  400ms ease-in-out;
+          -ms-transition:  400ms ease-in-out;
+          -o-transition:  400ms ease-in-out;
+          transition:  400ms ease-in-out; }
         form.custom-form label.item.item-input input:focus {
           border-bottom: none; }
           form.custom-form label.item.item-input input:focus + div {
@@ -2477,6 +2477,70 @@ form.custom-form {
             height: 2px; }
   form.custom-form .button-container {
     padding: 15px 0; }
+
+.item-accordion {
+  max-height: 40px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 1px 1px 5px 0px grey;
+  border-radius: 4px;
+  -webkit-transition: max-height 600ms ease-in-out;
+  -moz-transition: max-height 600ms ease-in-out;
+  -ms-transition: max-height 600ms ease-in-out;
+  -o-transition: max-height 600ms ease-in-out;
+  transition: max-height 600ms ease-in-out; }
+  .item-accordion > .ac-header {
+    padding: 10px;
+    font-size: 20px;
+    line-height: 20px; }
+    .item-accordion > .ac-header .icon-container {
+      right: 20px; }
+      .item-accordion > .ac-header .icon-container i {
+        -webkit-transition: transform 400ms ease-in-out;
+        -moz-transition: transform 400ms ease-in-out;
+        -ms-transition: transform 400ms ease-in-out;
+        -o-transition: transform 400ms ease-in-out;
+        transition: transform 400ms ease-in-out;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg); }
+  .item-accordion .ac-body {
+    width: 100%;
+    margin: 10px 0; }
+    .item-accordion .ac-body .ac-body-item {
+      padding: 10px; }
+      .item-accordion .ac-body .ac-body-item label,
+      .item-accordion .ac-body .ac-body-item input {
+        font-size: 18px; }
+      .item-accordion .ac-body .ac-body-item input {
+        width: 100%;
+        border-bottom: 2px solid grey; }
+        .item-accordion .ac-body .ac-body-item input:focus {
+          border-bottom: none; }
+          .item-accordion .ac-body .ac-body-item input:focus + div {
+            width: 100%;
+            height: 2px; }
+      .item-accordion .ac-body .ac-body-item div {
+        width: 0;
+        height: 0;
+        background-color: #f1322a;
+        -webkit-transition:  500ms ease-in-out;
+        -moz-transition:  500ms ease-in-out;
+        -ms-transition:  500ms ease-in-out;
+        -o-transition:  500ms ease-in-out;
+        transition:  500ms ease-in-out; }
+  .item-accordion.open {
+    max-height: 1000px; }
+    .item-accordion.open > .ac-header .icon-container i {
+      -webkit-transform: rotate(-180deg);
+      -moz-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      -o-transform: rotate(-180deg);
+      transform: rotate(-180deg); }
+    .item-accordion.open .ac-body .ac-body-item div {
+      width: 100%; }
 
 .platform-ios .scroll-content.auto-overflow-content {
   overflow: hidden; }
@@ -12286,11 +12350,11 @@ a.button {
 .menu {
   background-color: #000;
   top: 50px;
-  -webkit-transition: transform 400ms ease;
-  -moz-transition: transform 400ms ease;
-  -ms-transition: transform 400ms ease;
-  -o-transition: transform 400ms ease;
-  transition: transform 400ms ease;
+  -webkit-transition: transform 400ms ease-in-out;
+  -moz-transition: transform 400ms ease-in-out;
+  -ms-transition: transform 400ms ease-in-out;
+  -o-transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
   -webkit-transform: translate3d(-320px, 0, 0);
   transform: translate3d(-320px, 0, 0);
   z-index: 100 !important;
@@ -12315,11 +12379,11 @@ a.button {
     .menu .scroll-content .item .icon-container {
       right: 20px; }
       .menu .scroll-content .item .icon-container .fa {
-        -webkit-transition: transform 400ms ease;
-        -moz-transition: transform 400ms ease;
-        -ms-transition: transform 400ms ease;
-        -o-transition: transform 400ms ease;
-        transition: transform 400ms ease;
+        -webkit-transition: transform 400ms ease-in-out;
+        -moz-transition: transform 400ms ease-in-out;
+        -ms-transition: transform 400ms ease-in-out;
+        -o-transition: transform 400ms ease-in-out;
+        transition: transform 400ms ease-in-out;
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg); }
     .menu .scroll-content .item.open .list {
@@ -12341,11 +12405,11 @@ a.button {
       padding: 0; }
     .menu .scroll-content .item .list {
       max-height: 0;
-      -webkit-transition: max-height 400ms ease;
-      -moz-transition: max-height 400ms ease;
-      -ms-transition: max-height 400ms ease;
-      -o-transition: max-height 400ms ease;
-      transition: max-height 400ms ease;
+      -webkit-transition: max-height 400ms ease-in-out;
+      -moz-transition: max-height 400ms ease-in-out;
+      -ms-transition: max-height 400ms ease-in-out;
+      -o-transition: max-height 400ms ease-in-out;
+      transition: max-height 400ms ease-in-out;
       padding: 0; }
       .menu .scroll-content .item .list .item span {
         padding-left: 40px; }
