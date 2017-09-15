@@ -56,7 +56,7 @@ function ThubanMainServices(
 
         var url = '';
 
-        ThubanConfigService.get()
+        ThubanConfigService.getConfig()
         .then(function(config) {
             url += config.httpURL;
             url += config.documentService;
@@ -112,7 +112,7 @@ function ThubanMainServices(
 
         var url = '';
 
-        ThubanConfigService.get()
+        ThubanConfigService.getConfig()
         .then(function(config) {
             url += config.httpURL;
             url += config.resourceService;
@@ -171,7 +171,7 @@ function ThubanMainServices(
 
         var url = '';
 
-        ThubanConfigService.get()
+        ThubanConfigService.getConfig()
         .then(function(config) {
             url += config.httpURL;
             url += config.searchService;
@@ -213,7 +213,7 @@ function ThubanMainServices(
 
         var url = '';
 
-        ThubanConfigService.get()
+        ThubanConfigService.getConfig()
         .then(function(config) {
             url += config.httpURL;
             url += config.resourceService;
@@ -259,7 +259,7 @@ function ThubanMainServices(
 
         var url = '';
 
-        ThubanConfigService.get()
+        ThubanConfigService.getConfig()
         .then(function(config) {
             url += config.httpURL;
             url += config.resourceService;

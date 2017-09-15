@@ -43,11 +43,11 @@ function RequestsService (
         var deferred = $q.defer();
 
         var fields = [
-            {key: 'N_DOCUMENTO', value: data.dniNumber},
-            {key: 'D_APELLIDO', value: data.lastName},
-            {key: 'D_NOMBRE', value: data.name},
-            {key: 'D_SEXO', value: data.gender},
-            {key: 'F_NACIMIENTO', value: data.birthDate},
+            {key: 'N_DOCUMENTO', value: data.dni.dniNumber},
+            {key: 'D_APELLIDO', value: data.dni.lastName},
+            {key: 'D_NOMBRE', value: data.dni.name},
+            {key: 'D_SEXO', value: data.dni.gender},
+            {key: 'F_NACIMIENTO', value: data.dni.birthDate},
             {key: 'F_SOLICITUD', value: DatesService.getNowDate()},
             {key: 'ESTADO', value: 'OBSERVAR'},
             {key: 'D_PRODUCTO', value: data.product},
@@ -58,7 +58,7 @@ function RequestsService (
             {key: 'D_NACIONALIDAD', value: 'Argentina'}
         ];
 
-        ThubanCreatePdfService.createPdf(fields)
+        ThubanCreatePdfService.createPdf(fields, "salesChannelSolution")
         .then(function(data) {
             deferred.resolve(data);
         })
@@ -69,7 +69,7 @@ function RequestsService (
         return deferred.promise;
     }
 
-    function updateRequest(data, file = null, isBase64Encoded = false) {
+    function updateRequest(data, file, isBase64Encoded = false) {
         var deferred = $q.defer();
 
         var fields = [
@@ -78,7 +78,7 @@ function RequestsService (
 
         var binaryFile = b64toBinary(file);
 
-        ThubanSignPdfService.signPdf(data.requestId, fields, binaryFile, isBase64Encoded)
+        ThubanSignPdfService.signPdf(data.requestId, fields, binaryFile, isBase64Encoded, "salesChannelSolution")
         .then(function(success) {
             deferred.resolve(success);
         })

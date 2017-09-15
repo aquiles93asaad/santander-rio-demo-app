@@ -28,20 +28,20 @@ function ThubanSignPdfService(
 	/* PRIVATE METHODS
 	/****************/
 
-    function signPdf(itemId, fields, file, isBase64Encoded = false) {
+    function signPdf(itemId, fields, file, isBase64Encoded = false, solution) {
         var deferred = $q.defer();
         var url = '';
 
-        ThubanConfigService.get()
+        ThubanConfigService.getConfig()
         .then(function(config) {
-            url += config.httpURL;
-            url += config.signService;
+            url += config.general.httpURL;
+            url += config.services.signService;
             url += '&id=' + itemId;
             url += ProcessFieldsStringService.createFieldValueString(fields);
             url += '&isBase64Encoded=' + isBase64Encoded;
-            url += '&imageSize=' + config.signatureImageSize;
-            url += '&xPos=' + config.signatureXPos;
-            url += '&yPos=' + config.signatureYPos;
+            url += '&imageSize=' + config.templates[solution].signatureImageSize;
+            url += '&xPos=' + config.templates[solution].signatureXPos;
+            url += '&yPos=' + config.templates[solution].signatureYPos;
 
             url += '&token=' + config.token;
 

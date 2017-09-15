@@ -28,19 +28,19 @@ function ThubanCreatePdfService(
 	/* PRIVATE METHODS
 	/****************/
 
-    function createPdf(fields) {
+    function createPdf(fields, solution) {
         var deferred = $q.defer();
         var url = '';
 
-        ThubanConfigService.get()
+        ThubanConfigService.getConfig()
         .then(function(config) {
-            url += config.httpURL;
-            url += config.formService;
+            url += config.general.httpURL;
+            url += config.services.formService;
             url += ProcessFieldsStringService.createFieldValueString(fields);
-            url += '&token=' + config.token;
-            url += '&clase=' + config.requestClass;
-            url += '&autoGenField=' + config.requestAutoGenField;
-            url += '&backgroundImage=' + config.backgroundImage;
+            url += '&token=' + config.general.token;
+            url += '&clase=' + config.classes.requestClass;
+            url += '&autoGenField=' + config.templates[solution].requestAutoGenField;
+            url += '&backgroundImage=' + config.templates[solution].backgroundImage;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', url, true);

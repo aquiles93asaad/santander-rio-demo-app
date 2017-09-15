@@ -57,13 +57,15 @@ function ThubanConfigService(localStorageService, $q) {
                         backgroundImage: localStorageService.get('salesChannelBackgroundImage'),
                         signatureImageSize: localStorageService.get('salesChannelSignatureImageSize'),
                         signatureXPos: localStorageService.get('salesChannelSignatureXPos'),
-                        signatureYPos: localStorageService.get('salesChannelSignatureYPos')
+                        signatureYPos: localStorageService.get('salesChannelSignatureYPos'),
+                        autoGenField: localStorageService.get('salesChannelAutoGenField')
                     },
                     checksSolution: {
                         backgroundImage: localStorageService.get('checksBackgroundImage'),
                         signatureImageSize: localStorageService.get('checksSignatureImageSize'),
                         signatureXPos: localStorageService.get('checksSignatureXPos'),
-                        signatureYPos: localStorageService.get('checksSignatureYPos')
+                        signatureYPos: localStorageService.get('checksSignatureYPos'),
+                        autoGenField: localStorageService.get('checksAutoGenField')
                     }
                 }
             };
@@ -82,11 +84,11 @@ function ThubanConfigService(localStorageService, $q) {
         try{
             if(typeof config === 'object') {
 
-                for(var key in config) {
+                angular.forEach(config, function(value, key) {
                     if(config.hasOwnProperty(key)) {
-                        localStorageService.set(key, config[key]);
+                        localStorageService.set(key, value);
                     }
-                }
+                });
 
                 deferred.resolve();
             } else {
@@ -190,41 +192,50 @@ function ThubanConfigService(localStorageService, $q) {
         var deferred = $q.defer();
 
         try {
-            if(localStorageService.get('httpURL') === null) {
-                var config = {
-                    httpURL: 'http://demos:98/thuban-web/',
-                    token: 'xOir4xDkMmsRoWiGFgGdubZZUXOMaJThA1dnL4ELZj8=',
-                    microblinkLicense: 'UT7RE2YZ-5RMLRMOG-TQNXWQ7E-IJMK75MN-MSO2VZZF-UROEBE57-CFTHCDYB-K6GTL3IA',
-                    documentClass: 'SR_DOCUMENTO',
-                    requestClass: 'SR_SOLICITUD',
-                    bankClass: 'BANCO',
-                    checkClass: 'CHEQUE',
-                    clientClass: 'CLIENTE',
-                    accountClientClass: 'CUENTA_CLIENTE',
-                    endorsementClass: 'ENDOSO',
-                    documentService: 'http-services?service=documentService',
-                    resourceService: 'http-services?service=resourceService',
-                    searchService: 'http-services/searchService?service=searchService',
-                    formService: 'mobile-services?service=formService',
-                    signService: 'mobile-services?service=firmarSolicitud',
-                    salesChannelBackgroundImage: 'C:\\\\DocTemplateImages\\\\SolicitudSantander.png',
-                    salesChannelSignatureImageSize: '150',
-                    salesChannelSignatureXPos: '40',
-                    salesChannelSignatureYPos: '170',
-                    checksBackgroundImage: 'C:\\\\DocTemplateImages\\\\SolicitudSantander.png',
-                    checksSignatureImageSize: '150',
-                    checksSignatureXPos: '40',
-                    checksSignatureYPos: '170'
-                };
+            var config = {
+                httpURL: 'http://demos:98/thuban-web/',
+                token: 'xOir4xDkMmsRoWiGFgGdubZZUXOMaJThA1dnL4ELZj8=',
+                microblinkLicense: 'UT7RE2YZ-5RMLRMOG-TQNXWQ7E-IJMK75MN-MSO2VZZF-UROEBE57-CFTHCDYB-K6GTL3IA',
+                documentClass: 'SR_DOCUMENTO',
+                requestClass: 'SR_SOLICITUD',
+                bankClass: 'BANCO',
+                checkClass: 'CHEQUE',
+                clientClass: 'CLIENTE',
+                accountClientClass: 'CUENTA_CLIENTE',
+                endorsementClass: 'ENDOSO',
+                documentService: 'http-services?service=documentService',
+                resourceService: 'http-services?service=resourceService',
+                searchService: 'http-services/searchService?service=searchService',
+                formService: 'mobile-services?service=formService',
+                signService: 'mobile-services?service=firmarSolicitud',
+                salesChannelBackgroundImage: 'C:\\\\DocTemplateImages\\\\SolicitudSantander.png',
+                salesChannelSignatureImageSize: '150',
+                salesChannelSignatureXPos: '40',
+                salesChannelSignatureYPos: '170',
+                salesChannelAutoGenField: 'NRO_SOLICITUD',
+                checksBackgroundImage: 'C:\\\\DocTemplateImages\\\\SolicitudSantander.png',
+                checksSignatureImageSize: '150',
+                checksSignatureXPos: '40',
+                checksSignatureYPos: '170'
+            };
 
-                setConfig(config)
-                .then(function() {
-                    deferred.resolve();
-                })
-                .catch(function(error) {
-                    deferred.reject(error);
-                });
-            }
+            var configToSet = {};
+
+            angular.forEach(config, function(value, key) {
+                if(config.hasOwnProperty(key)) {
+                    if(localStorageService.get(key) === null) {
+                        configToSet[key] = value;
+                    }
+                }
+            });
+
+            setConfig(configToSet)
+            .then(function() {
+                deferred.resolve();
+            })
+            .catch(function(error) {
+                deferred.reject(error);
+            });
         } catch (error) {
             deferred.reject(error);
         }

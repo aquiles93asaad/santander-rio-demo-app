@@ -2479,7 +2479,7 @@ form.custom-form {
     padding: 15px 0; }
 
 .item-accordion {
-  max-height: 40px;
+  max-height: 50px;
   overflow: hidden;
   margin-bottom: 25px;
   box-shadow: 1px 1px 5px 0px grey;
@@ -2489,6 +2489,10 @@ form.custom-form {
   -ms-transition: max-height 600ms ease-in-out;
   -o-transition: max-height 600ms ease-in-out;
   transition: max-height 600ms ease-in-out; }
+  .item-accordion .item-accordion {
+    margin: 10px 0;
+    box-shadow: none;
+    border-radius: none; }
   .item-accordion > .ac-header {
     padding: 10px;
     font-size: 20px;

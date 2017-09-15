@@ -171,7 +171,7 @@ form.custom-form {
     @include custom-transition(600ms, ease-in-out, max-height);
 
     .item-accordion {
-        margin-bottom: $distance-m;
+        margin: $distance-x-s $no-distance;
         box-shadow: none;
         border-radius: none;
     }

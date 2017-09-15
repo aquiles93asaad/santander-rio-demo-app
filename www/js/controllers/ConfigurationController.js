@@ -21,20 +21,26 @@ function ConfigurationController(
     })
     .catch(function(error) {
         console.error(error);
-    })
+    });
 
     $scope.setConfiguration = function() {
 
         var emptyValue = null;
+        var configToSet = {};
 
-        for(key in $scope.config)
-            if($scope.config[key] == null || $scope.config[key] == '') {
-                emptyValue = key;
-                break;
+        configToSet = getConfigToSet($scope.config, configToSet);
+
+        for (key in configToSet) {
+            if (configToSet.hasOwnProperty(key)) {
+                if(configToSet[key] === null || configToSet[key] === "") {
+                    emptyValue = key;
+                    break;
+                }
             }
+        }
 
         if(emptyValue === null) {
-            ThubanConfigService.set($scope.config)
+            ThubanConfigService.setConfig(configToSet)
             .then(function() {
                 $cordovaToast.showShortBottom('La configuración se guardó correctamente!');
             })
@@ -43,5 +49,19 @@ function ConfigurationController(
             });
         } else
             $cordovaToast.showShortBottom('El valor ' + emptyValue + ' no puede ser vacío.');
+    };
+
+    function getConfigToSet(config, configToSet) {
+        angular.forEach(config, function(value, key) {
+            if(config.hasOwnProperty(key)) {
+                if(typeof value === 'object' ) {
+                    getConfigToSet(value, configToSet);
+                } else {
+                    configToSet[key] = value;
+                }
+            }
+        });
+
+        return configToSet;
     }
 }

@@ -13,7 +13,7 @@ ViewRequestController.$inject = [
     '$ionicLoading',
     '$cordovaToast',
     '$cordovaFile',
-    'DocumentsService'
+    'RequestsService'
 ];
 
 function ViewRequestController(
@@ -25,7 +25,7 @@ function ViewRequestController(
     $ionicLoading,
     $cordovaToast,
     $cordovaFile,
-    DocumentsService
+    RequestsService
 ) {
 
     $scope.pdfUrl = cordova.file.externalDataDirectory + $stateParams.fileName + '.pdf';
@@ -118,7 +118,7 @@ function ViewRequestController(
                     requestId: $stateParams.fileName
                 };
 
-                DocumentsService.updateRequest(data, angular.element('#signature-image').attr('src'))
+                RequestsService.updateRequest(data, angular.element('#signature-image').attr('src'))
                 .then(function(success) {
 
                     $cordovaFile.removeFile(cordova.file.externalDataDirectory, $stateParams.fileName + '.pdf')
