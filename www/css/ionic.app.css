@@ -2359,6 +2359,27 @@ body .menu-content .view-container.menu-animated {
 .scroll-content.has-header {
   top: 0px; }
 
+.scroll-content .custom-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: linear width 100ms;
+  -moz-transition: linear width 100ms;
+  -ms-transition: linear width 100ms;
+  -o-transition: linear width 100ms;
+  transition: linear width 100ms; }
+
+.scroll-content .bar.bar-footer {
+  height: 75px;
+  background: none;
+  font-size: 10px;
+  padding: 0 10px;
+  text-align: justify; }
+
 .modal .auto-overflow-content.has-header {
   top: 50px;
   margin-bottom: 0; }
@@ -12424,10 +12445,23 @@ a.button {
 
 .nav-bar-container .nav-bar-block .bar-header {
   border-bottom-width: 0; }
-  .nav-bar-container .nav-bar-block .bar-header .button:before {
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 40px; }
+  .nav-bar-container .nav-bar-block .bar-header .button {
+    -webkit-transition: ease transform 400ms;
+    -moz-transition: ease transform 400ms;
+    -ms-transition: ease transform 400ms;
+    -o-transition: ease transform 400ms;
+    transition: ease transform 400ms;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+    .nav-bar-container .nav-bar-block .bar-header .button.open {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); }
+      .nav-bar-container .nav-bar-block .bar-header .button.open:before {
+        font-weight: 400; }
+    .nav-bar-container .nav-bar-block .bar-header .button:before {
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 40px; }
 
 .modal .bar.bar-assertive,
 .menu-content .bar.bar-assertive {

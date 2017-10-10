@@ -193,7 +193,7 @@ function ThubanConfigService(localStorageService, $q) {
 
         try {
             var config = {
-                httpURL: 'http://demos:98/thuban-web/',
+                httpURL: 'http://190.210.238.131:98/thuban-web/',
                 token: 'xOir4xDkMmsRoWiGFgGdubZZUXOMaJThA1dnL4ELZj8=',
                 microblinkLicense: 'UT7RE2YZ-5RMLRMOG-TQNXWQ7E-IJMK75MN-MSO2VZZF-UROEBE57-CFTHCDYB-K6GTL3IA',
                 documentClass: 'SR_DOCUMENTO',

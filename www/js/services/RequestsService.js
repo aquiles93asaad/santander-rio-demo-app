@@ -76,7 +76,7 @@ function RequestsService (
             {key: 'ESTADO', value: 'Analisis de Riesgo'}
         ];
 
-        var binaryFile = b64toBinary(file);
+        var binaryFile = FilesConverterService.base64ToBinary(file);
 
         ThubanSignPdfService.signPdf(data.requestId, fields, binaryFile, isBase64Encoded, "salesChannelSolution")
         .then(function(success) {
@@ -118,7 +118,7 @@ function RequestsService (
 
         var fields = [
             {key: 'NRO_SOLICITUD', value: data.nroSolicitud},
-            {key: 'N_DOCUMENTO', value: data.dniNumber},
+            {key: 'N_DOCUMENTO', value: data.dni},
             {key: 'D_APELLIDO', value: data.lastName},
             {key: 'D_NOMBRE', value: data.name},
             {key: 'F_DIGITALIZACION', value: DatesService.getNowDate()},

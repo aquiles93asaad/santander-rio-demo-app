@@ -42,8 +42,7 @@ function ThubanSignPdfService(
             url += '&imageSize=' + config.templates[solution].signatureImageSize;
             url += '&xPos=' + config.templates[solution].signatureXPos;
             url += '&yPos=' + config.templates[solution].signatureYPos;
-
-            url += '&token=' + config.token;
+            url += '&token=' + config.general.token;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', url, true);

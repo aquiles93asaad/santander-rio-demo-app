@@ -58,14 +58,14 @@ function ThubanMainServices(
 
         ThubanConfigService.getConfig()
         .then(function(config) {
-            url += config.httpURL;
-            url += config.documentService;
+            url += config.general.httpURL;
+            url += config.services.documentService;
             url += '&clase=' + clase;
             url += ProcessFieldsStringService.createFieldValueString(fields);
             url += '&extension=' + extension;
             url += '&isBase64Encoded=' + isBase64Encoded;
             url += '&name=';
-            url += '&token=' + config.token;
+            url += '&token=' + config.general.token;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', url, true);
@@ -114,13 +114,13 @@ function ThubanMainServices(
 
         ThubanConfigService.getConfig()
         .then(function(config) {
-            url += config.httpURL;
-            url += config.resourceService;
+            url += config.general.httpURL;
+            url += config.services.resourceService;
             url += '&id=' + itemId;
             url += ProcessFieldsStringService.createFieldValueString(fields);
             url += '&extension=' + extension;
             url += '&isBase64Encoded=' + isBase64Encoded;
-            url += '&token=' + config.token;
+            url += '&token=' + config.general.token;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', url, true);
@@ -173,11 +173,11 @@ function ThubanMainServices(
 
         ThubanConfigService.getConfig()
         .then(function(config) {
-            url += config.httpURL;
-            url += config.searchService;
+            url += config.general.httpURL;
+            url += config.services.searchService;
             url += ProcessFieldsStringService.createShowFieldsString(showFields);
             url += ProcessFieldsStringService.createCriteriaString(criterias);
-            url += '&token=' + config.token;
+            url += '&token=' + config.general.token;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('GET', url, true);
@@ -215,11 +215,11 @@ function ThubanMainServices(
 
         ThubanConfigService.getConfig()
         .then(function(config) {
-            url += config.httpURL;
-            url += config.resourceService;
+            url += config.general.httpURL;
+            url += config.services.resourceService;
             url += '&method=getresource';
             url += '&id=' + itemId;
-            url += '&token=' + config.token;
+            url += '&token=' + config.general.token;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('GET', url, true);
@@ -261,11 +261,11 @@ function ThubanMainServices(
 
         ThubanConfigService.getConfig()
         .then(function(config) {
-            url += config.httpURL;
-            url += config.resourceService;
+            url += config.general.httpURL;
+            url += config.services.resourceService;
             url += '&method=deleteresource';
             url += '&id=' + itemId;
-            url += '&token=' + config.token;
+            url += '&token=' + config.general.token;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('GET', url, true);

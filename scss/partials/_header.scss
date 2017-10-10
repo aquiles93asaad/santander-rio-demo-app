@@ -4,6 +4,17 @@
             border-bottom-width: 0;
 
             .button {
+                @include custom-transition(transform, 400ms, ease);
+                @include rotate(0deg);
+
+                &.open {
+                	@include rotate(180deg);
+
+                    &:before{
+                        font-weight: $font-weight-regular;
+                    }
+                }
+
                 &:before {
                     font-size: $font-size-x-large;
                     font-weight: $font-weight-bold;

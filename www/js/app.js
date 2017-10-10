@@ -12,6 +12,16 @@ angular.module('SantanderRioApp', ['ionic', 'ngCordova', 'ThubanServices', 'pdf'
         controller: 'AppController'
     })
 
+    .state('app.home', {
+        url: '/home',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/pages/home.html',
+                controller: 'HomeController'
+            }
+        }
+    })
+
     .state('app.products', {
         url: '/products/:type',
         views: {
@@ -143,7 +153,7 @@ angular.module('SantanderRioApp', ['ionic', 'ngCordova', 'ThubanServices', 'pdf'
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('app/products/cards');
+    $urlRouterProvider.otherwise('app/home');
 })
 
 .run(function($ionicPlatform, ThubanConfigService, $rootScope) {

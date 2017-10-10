@@ -36,11 +36,11 @@ function ThubanCreatePdfService(
         .then(function(config) {
             url += config.general.httpURL;
             url += config.services.formService;
-            url += ProcessFieldsStringService.createFieldValueString(fields);
-            url += '&token=' + config.general.token;
             url += '&clase=' + config.classes.requestClass;
-            url += '&autoGenField=' + config.templates[solution].requestAutoGenField;
+            url += ProcessFieldsStringService.createFieldValueString(fields);
+            url += '&autoGenField=' + config.templates[solution].autoGenField;
             url += '&backgroundImage=' + config.templates[solution].backgroundImage;
+            url += '&token=' + config.general.token;
 
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open('POST', url, true);
