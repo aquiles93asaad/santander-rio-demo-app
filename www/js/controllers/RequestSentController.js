@@ -6,31 +6,41 @@ angular.module('SantanderRioApp')
 
 RequestSentController.$inject = [
     '$scope',
-    '$cordovaToast',
     '$state',
     '$stateParams',
-    '$ionicHistory'
+    '$cordovaToast',
+    '$cordovaFile',
+    '$ionicHistory',
+    '$ionicLoading'
 ];
 
 function RequestSentController(
     $scope,
-    $cordovaToast,
     $state,
     $stateParams,
-    $ionicHistory
+    $cordovaToast,
+    $cordovaFile,
+    $ionicHistory,
+    $ionicLoading
 ) {
+    $scope.pdfUrl = cordova.file.externalDataDirectory + $stateParams.fileName + '.pdf';
 
     $scope.form = {
         pinNumber: ''
     };
 
+    $scope.onLoad = function() {
+        $ionicLoading.hide();
+    }
+
     $scope.showSuccessMessage = function() {
         if($scope.form.pinNumber.length == 4) {
             $cordovaToast.showShortBottom('La solicitud ha sido ingresada correctamente.');
+            $cordovaFile.removeFile(cordova.file.externalDataDirectory, $stateParams.fileName + '.pdf');
             $ionicHistory.nextViewOptions({
                 disableBack: true
             });
-            $state.go('app.products', {type: $stateParams.type});
+            $state.go('app.home');
         } else {
             $cordovaToast.showShortBottom('El código PIN debe ser de 4 dígitos!');
         }

@@ -13,7 +13,8 @@ ViewRequestController.$inject = [
     '$ionicLoading',
     '$cordovaToast',
     '$cordovaFile',
-    'RequestsService'
+    'RequestsService',
+    'ThubanMainServices'
 ];
 
 function ViewRequestController(
@@ -25,7 +26,8 @@ function ViewRequestController(
     $ionicLoading,
     $cordovaToast,
     $cordovaFile,
-    RequestsService
+    RequestsService,
+    ThubanMainServices
 ) {
 
     $scope.pdfUrl = cordova.file.externalDataDirectory + $stateParams.fileName + '.pdf';
@@ -105,6 +107,10 @@ function ViewRequestController(
             signaturePad.clear();
         };
 
+        $scope.onLoad = function() {
+            $ionicLoading.hide();
+        }
+
         $scope.sendRequest = function() {
             if($scope.showSingatureImage) {
                 $ionicLoading.show({
@@ -120,31 +126,25 @@ function ViewRequestController(
 
                 RequestsService.updateRequest(data, angular.element('#signature-image').attr('src'))
                 .then(function(success) {
-
-                    $cordovaFile.removeFile(cordova.file.externalDataDirectory, $stateParams.fileName + '.pdf')
-                    .then(function(success) {
-                        console.log(success);
-                    })
-                    .catch(function(error) {
-                        console.log(error);
-                    });
-
                     $cordovaToast.showShortBottom('La solicitud ha sido enviada correctamente!');
-
+                    return ThubanMainServices.getThubanResource($stateParams.fileName);
+                })
+                .then(function(file) {
+                    return $cordovaFile.writeFile(cordova.file.externalDataDirectory, $stateParams.fileName + '.pdf', file, true);
+                })
+                .then(function(success) {
                     $ionicHistory.nextViewOptions({
                         disableBack: true
                     });
-
-                    $state.go('app.requestSent', {type: $stateParams.type, itemId: $stateParams.itemId});
+                    $state.go('app.requestSent', {type: $stateParams.type, itemId: $stateParams.itemId, fileName: $stateParams.fileName});
                 })
                 .catch(function(error) {
                     console.error(error);
-
                     $cordovaToast.showShortBottom('La solicitud no se pudo enviar correctamente. Intentelo de nuevo!');
                 })
-                .finally(function() {
-                    $ionicLoading.hide();
-                })
+                // .finally(function() {
+                //     $ionicLoading.hide();
+                // })
             } else {
                 $cordovaToast.showShortBottom('Firme la solicitud primero para poder enviarla.');
             }

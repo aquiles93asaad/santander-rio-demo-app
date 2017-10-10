@@ -177,17 +177,11 @@ function ProductActionsController(
                         };
 
                         return RequestsService.newIdentificationDocument(docData, dniImage, encodingType);
-
                     }).then(function(success) {
-
-                        return RequestsService.getRequestFile(fileId)
-
+                        return RequestsService.getRequestFile(fileId);
                     }).then(function(file) {
-
-                        return $cordovaFile.writeFile(cordova.file.externalDataDirectory, fileId + '.pdf', file, true)
-
+                        return $cordovaFile.writeFile(cordova.file.externalDataDirectory, fileId + '.pdf', file, true);
                     }).then(function(success) {
-
                         $cordovaToast.showShortBottom('Sus datos fueron enviados correctamente!');
 
                         $ionicHistory.nextViewOptions({
@@ -195,19 +189,14 @@ function ProductActionsController(
                         });
 
                         $state.go('app.viewRequest', {type: product.category, itemId: product.id, fileName: fileId});
-
                     })
                     .catch(function(error) {
-
                         console.error(error);
                         $cordovaToast.showShortBottom('Sus datos no fueron enviados correctamente. Intente de nuevo por favor!');
-
                     })
-                    .finally(function() {
-
-                        $ionicLoading.hide();
-
-                    });
+                    // .finally(function() {
+                    //     $ionicLoading.hide();
+                    // });
                 } else {
 
                     $cordovaToast.showShortBottom('Realice un scan de su DNI por favor.');

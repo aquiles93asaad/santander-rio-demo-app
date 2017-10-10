@@ -1,29 +1,52 @@
-.tab-content {
-    &.pane {
-        overflow-y: auto;
-        padding-bottom: $distance-5x-l;
-    }
-
+.scroll-content {
     .item-complex {
         height: 200px;
-        @extend .relative-parent;
 
         .item-content {
-            @extend .vertical-centered;
-            text-align: center;
+            @extend .relative-parent;
             padding: $distance-s;
             width: 100%;
-            max-height: 100%;
+            height: 100%;
+
+            .image-container,
+            .name-container {
+                width: 50%;
+            }
+
+            .name-container {
+                text-align: center;
+            }
 
             img {
-                max-width: 70%;
-                max-height: 70%;
+                max-width: 100%;
             }
 
             span {
                 display: block;
+                width: 100%;
                 font-size: $font-size-regular;
                 font-weight: $font-weight-bold;
+                white-space: pre-wrap;
+            }
+        }
+
+        &:nth-child(odd) {
+            .image-container {
+                left: 0;
+            }
+
+            .name-container {
+                right: 0;
+            }
+        }
+
+        &:nth-child(even) {
+            .image-container {
+                right: 0;
+            }
+
+            .name-container {
+                left: 0;
             }
         }
     }

@@ -2,8 +2,12 @@
     <ion-content class="auto-overflow-content">
         <ion-list>
             <ion-item ng-repeat="product in products" ui-sref="app.product({type: product.category, itemId: product.id})">
-                <!-- <img ng-src="img/products/{{product.image}}"> -->
-                <span>{{product.name}}</span>
+                <div class="image-container vertical-centered">
+                    <img ng-src="img/products/{{product.image}}">
+                </div>
+                <div class="name-container vertical-centered">
+                    <span>{{product.name}}</span>
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>

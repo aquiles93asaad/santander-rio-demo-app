@@ -101,6 +101,10 @@ img {
         margin: $no-distance $distance-s;
         padding: $no-distance;
     }
+
+    &.special {
+        top: 40%;
+    }
 }
 
 .button-container {

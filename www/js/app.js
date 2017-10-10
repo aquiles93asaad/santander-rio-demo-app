@@ -133,7 +133,7 @@ angular.module('SantanderRioApp', ['ionic', 'ngCordova', 'ThubanServices', 'pdf'
     })
 
     .state('app.requestSent', {
-        url: '/products/:type/:itemId/request-sent',
+        url: '/products/:type/:itemId/request-sent/:fileName',
         views: {
             'menuContent': {
                 templateUrl: 'templates/pages/request-sent.html',

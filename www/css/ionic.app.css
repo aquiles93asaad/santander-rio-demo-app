@@ -2384,10 +2384,10 @@ body .menu-content .view-container.menu-animated {
   top: 50px;
   margin-bottom: 0; }
 
-.relative-parent, .item-accordion > .ac-header, .tab-content .item-complex {
+.relative-parent, .item-accordion > .ac-header, .scroll-content .item-complex .item-content {
   position: relative; }
 
-.vertical-centered, .item-accordion > .ac-header .icon-container, .menu .scroll-content .item .icon-container, .tab-content .item-complex .item-content {
+.vertical-centered, .item-accordion > .ac-header .icon-container, .menu .scroll-content .menu-item .icon-container {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -2436,9 +2436,11 @@ img.rotated {
   padding: 0 15px; }
   .image-container.top-margin {
     margin-top: 30px; }
-  .image-container.relative-parent, .item-accordion > .image-container.ac-header, .tab-content .image-container.item-complex {
+  .image-container.relative-parent, .item-accordion > .image-container.ac-header, .scroll-content .item-complex .image-container.item-content {
     margin: 0 15px;
     padding: 0; }
+  .image-container.special {
+    top: 40%; }
 
 .button-container {
   padding: 15px; }
@@ -12390,7 +12392,7 @@ a.button {
       max-width: 75%;
       display: block;
       margin: 20px auto; }
-  .menu .scroll-content .item {
+  .menu .scroll-content .menu-item {
     background-color: #000;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     color: #fff;
@@ -12398,12 +12400,12 @@ a.button {
     font-size: 16px;
     border-top: none;
     margin: 0 -1px; }
-    .menu .scroll-content .item span {
+    .menu .scroll-content .menu-item span {
       padding: 20px;
       display: block; }
-    .menu .scroll-content .item .icon-container {
+    .menu .scroll-content .menu-item .icon-container {
       right: 20px; }
-      .menu .scroll-content .item .icon-container .fa {
+      .menu .scroll-content .menu-item .icon-container .fa {
         -webkit-transition: transform 400ms ease-in-out;
         -moz-transition: transform 400ms ease-in-out;
         -ms-transition: transform 400ms ease-in-out;
@@ -12411,24 +12413,24 @@ a.button {
         transition: transform 400ms ease-in-out;
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg); }
-    .menu .scroll-content .item.open .list {
+    .menu .scroll-content .menu-item.open .list {
       max-height: 500px; }
-    .menu .scroll-content .item.open > span {
+    .menu .scroll-content .menu-item.open > span {
       border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
-      .menu .scroll-content .item.open > span .fa {
+      .menu .scroll-content .menu-item.open > span .fa {
         -webkit-transform: rotate(-180deg);
         transform: rotate(-180deg); }
-    .menu .scroll-content .item.chosen:not(.open) {
+    .menu .scroll-content .menu-item.chosen:not(.open) {
       background-color: #fff;
       border-left: 10px solid #ee322a;
       color: #ee322a;
       border-bottom: none;
       padding-left: 10px; }
-    .menu .scroll-content .item a {
+    .menu .scroll-content .menu-item a {
       border: none;
       background-color: transparent;
       padding: 0; }
-    .menu .scroll-content .item .list {
+    .menu .scroll-content .menu-item .list {
       max-height: 0;
       -webkit-transition: max-height 400ms ease-in-out;
       -moz-transition: max-height 400ms ease-in-out;
@@ -12436,11 +12438,11 @@ a.button {
       -o-transition: max-height 400ms ease-in-out;
       transition: max-height 400ms ease-in-out;
       padding: 0; }
-      .menu .scroll-content .item .list .item span {
+      .menu .scroll-content .menu-item .list .item span {
         padding-left: 40px; }
-      .menu .scroll-content .item .list .item:last-child {
+      .menu .scroll-content .menu-item .list .item:last-child {
         border-bottom: none; }
-      .menu .scroll-content .item .list .item.chosen span {
+      .menu .scroll-content .menu-item .list .item.chosen span {
         padding-left: 20px; }
 
 .nav-bar-container .nav-bar-block .bar-header {
@@ -12499,24 +12501,33 @@ a.button {
     float: left;
     width: 50%; }
 
-.tab-content.pane {
-  overflow-y: auto;
-  padding-bottom: 50px; }
-
-.tab-content .item-complex {
+.scroll-content .item-complex {
   height: 200px; }
-  .tab-content .item-complex .item-content {
-    text-align: center;
+  .scroll-content .item-complex .item-content {
     padding: 15px;
     width: 100%;
-    max-height: 100%; }
-    .tab-content .item-complex .item-content img {
-      max-width: 70%;
-      max-height: 70%; }
-    .tab-content .item-complex .item-content span {
+    height: 100%; }
+    .scroll-content .item-complex .item-content .image-container,
+    .scroll-content .item-complex .item-content .name-container {
+      width: 50%; }
+    .scroll-content .item-complex .item-content .name-container {
+      text-align: center; }
+    .scroll-content .item-complex .item-content img {
+      max-width: 100%; }
+    .scroll-content .item-complex .item-content span {
       display: block;
+      width: 100%;
       font-size: 16px;
-      font-weight: 600; }
+      font-weight: 600;
+      white-space: pre-wrap; }
+  .scroll-content .item-complex:nth-child(odd) .image-container {
+    left: 0; }
+  .scroll-content .item-complex:nth-child(odd) .name-container {
+    right: 0; }
+  .scroll-content .item-complex:nth-child(even) .image-container {
+    right: 0; }
+  .scroll-content .item-complex:nth-child(even) .name-container {
+    left: 0; }
 
 .product-name {
   text-align: center;

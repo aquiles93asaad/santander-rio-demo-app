@@ -1,5 +1,9 @@
 <ion-view cache-view="false">
     <ion-content class="auto-overflow-content">
+        <div class="pdf-wrapper">
+            <ng-pdf class="pdf-container" template-url="templates/partials/pdf-viewer.html" debug="true" scale="page-fit"></ng-pdf>
+        </div>
+        
         <form ng-submit="showSuccessMessage()" class="custom-form">
             <div class="list">
                 <label class="item item-input">
